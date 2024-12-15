@@ -5,13 +5,12 @@ import kr.ac.kumoh.s20210499.w24wNetflixBackendmongodb.service.NetFlixService
 import org.springframework.web.bind.annotation.*
 
 @RestController
-
 @CrossOrigin(origins = ["https://20210499hwnetlist.netlify.app"])
 class NetFlixController(private val service: NetFlixService) {
     @PostMapping
     fun addNetflix(@RequestBody netflix: NetflixList): NetflixList = service.addSong(netflix)
 
-    @GetMapping
+    @GetMapping("api/netflixlist")
     fun getAllList(): List<NetflixList> = service.getAllList();
 
     @GetMapping("/{id}")
