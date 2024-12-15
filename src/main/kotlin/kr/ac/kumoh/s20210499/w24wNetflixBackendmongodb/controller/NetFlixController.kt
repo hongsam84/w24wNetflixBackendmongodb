@@ -10,6 +10,9 @@ class NetFlixController(private val service: NetFlixService) {
     @PostMapping
     fun addNetflix(@RequestBody netflix: NetflixList): NetflixList = service.addSong(netflix)
 
+    @GetMapping
+    fun getRoot(): List<NetflixList> = service.getAllList();
+
     @GetMapping("api/netflixlist")
     fun getAllList(): List<NetflixList> = service.getAllList();
 
