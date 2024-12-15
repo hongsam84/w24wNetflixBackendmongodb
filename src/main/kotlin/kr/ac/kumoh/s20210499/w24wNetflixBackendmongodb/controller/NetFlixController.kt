@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/api/netflixlist")
-@CrossOrigin(origins = ["http://localhost:3000"])
+@CrossOrigin(origins = ["https://20210499hwnetlist.netlify.app"])
 class NetFlixController(private val service: NetFlixService) {
     @PostMapping
     fun addSong(@RequestBody netflix: NetflixList): NetflixList = service.addSong(netflix)
